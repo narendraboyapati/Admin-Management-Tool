@@ -1,0 +1,25 @@
+<%- include('layouts/header'); -%>
+
+<body>
+    <%- include('layouts/welcome_nav'); -%>
+    <main>
+    <form action="/deletepage/<%= pageDetails._id %>" method="post">
+    <div class="deleteConfirmation">
+    <input type="hidden" name="fromDeletePage" value="true">
+    <h3>Confirm Deletion</h3>
+    
+    <p>Do you want to proceed with the deletion?</p>
+        <div class="submission">
+        <button type="submit">Confirm Delete</button> 
+        
+        <button type="button" id="cancelButton">Cancel</button>
+    </div>
+    </form>
+</main>
+<script>
+    document.getElementById("cancelButton").addEventListener("click", function() {
+        window.location.href = "/editpage";
+    });
+</script>
+<%- include('layouts/footer'); -%>
+</body>

@@ -1,0 +1,19 @@
+<%- include('layouts/header'); -%>
+
+<body>
+
+    <%- include('layouts/login_nav'); -%>
+  
+    <div class="enlarged-page">
+        <img src="/<%= pageDetails.imagePath %>" alt="<%= pageDetails.imageName %>" width="1000px" height="400"/>
+        <div class="pagedetailscontent">
+        <h2><%= pageDetails.pageTitle %></h2>
+        
+        <p><%- pageDetails.desc %></p>
+        <br/> <br/>
+        <a href="/login">Click here </a>to login
+    </div>
+    </div>
+</body>
+
+<%- include('layouts/footer'); -%>

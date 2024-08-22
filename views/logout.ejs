@@ -1,0 +1,17 @@
+<%- include('layouts/header'); -%>
+<nav class="navbar">
+    <% if (allPageTitles && allPageTitles.length > 0) { %>
+        <% allPageTitles.forEach(page => { %>
+            <a href=""><%= page.pageTitle %></a>
+        <% }); %>
+    <% } %>
+</nav>
+<body>
+   
+    <div class="logoutConfirmation">
+     <h3> Logout</h3>
+     <p>You have successfully logged out!</p> <br/>
+      <p>Please <a href="/">click here</a> to login</p>
+    </div>
+    <%- include('layouts/footer'); -%>
+</body>

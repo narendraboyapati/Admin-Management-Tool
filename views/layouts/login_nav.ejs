@@ -1,0 +1,7 @@
+<nav class="navbar">
+        <% if (allPageTitles && allPageTitles.length > 0) { %>
+            <% allPageTitles.forEach(page => { %>
+                <a href="/page/<%= page._id %>"><%= page.pageTitle %></a>
+            <% }); %>
+        <% } %>
+</nav>

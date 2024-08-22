@@ -1,0 +1,50 @@
+<%- include('layouts/header'); -%>
+
+    <body>
+        <%- include('layouts/login_nav'); -%>
+        <br/>
+        <section class="w50">
+            <fieldset class="loginform">
+            <form name="myform" method="post" action="/submit">
+              <div class="loginform">
+                
+                <label>Username</label>
+                <input id="username" placeholder="UserName" type="text" name="username"> <br/><br/>
+
+
+                <label>Password</label>
+                <input id="password" placeholder="Password" type="password" name="password"><br /><br/>
+              </div>
+
+                <% if (errors.some(error => error.path === 'username' || error.path === 'password')) { %>
+                    <p class="error">
+                      Please enter the username and password
+                    </p>
+                  <% } else if (errors.some(error => error.path === 'username')) { %>
+                      <p class="error">
+                        <%= errors.find(error => error.path === 'username').msg %>
+                      </p>
+                     
+                    <% } else if (errors.some(error => error.path === 'password')) { %>
+                      <p class="error">
+                        <%= errors.find(error => error.path === 'password').msg %>
+                      </p>
+                      <% } else if (errors.some(error => error.msg === 'Invalid credentials. Please try again.')) { %>
+                        <p class="error">
+                            <%= errors.find(error => error.msg === 'Invalid credentials. Please try again.').msg %>
+                        </p>
+                   
+                    <% } %>
+                  
+        
+                    <button type="submit">Submit</button>  
+                         
+            </fieldset>
+          
+            </form>
+           
+        </section>
+        
+    </body>
+
+<%- include('layouts/footer'); -%>

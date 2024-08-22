@@ -1,0 +1,43 @@
+
+<%- include('layouts/header'); -%>
+    
+    <body>
+        <%- include('layouts/welcome_nav'); -%>
+        <br/>
+        <main>
+            <form action="/editpage" method="get" enctype="multipart/form-data">
+              <div class="edittable">
+              <table>
+                <tr>
+                  <th>Page</th>
+                  <th>Manage</th>
+                  <th>Manage</th>
+                  </tr>
+                  <tr>
+                    <% if (allPageTitles && allPageTitles.length > 0) { %>
+                      <% allPageTitles.forEach(page => { %>
+                          <tr>
+                              <td><%= page.pageTitle %></td>
+                              <input type="hidden" name="fromEditPage" value="true">
+                              
+                              <td><a href="/edit/<%= page._id %>">Edit</a></td>
+                              <td>
+                                <a href="/deletepage/<%= page._id %>">Delete</a> </form> </td> 
+                              
+                          </tr>
+                      <% }); %>
+                  <% } else { %>
+                      <tr>
+                          <td colspan="3">No pages found.</td>
+                        </tr>
+                        <% } %>
+              </table>
+            </div>
+              </form>
+        </main>
+       
+        <%- include('layouts/footer'); -%>
+        
+      </body>
+    
+      

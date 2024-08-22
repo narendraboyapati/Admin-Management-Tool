@@ -1,0 +1,69 @@
+
+<%- include('layouts/header'); -%>
+    
+    <body>
+        <%- include('layouts/welcome_nav'); -%>
+        <br/>
+        <main>
+            <form action="/editprocess/<%= pageDetails._id %>" method="POST" enctype="multipart/form-data">
+
+                <div class="wrapper">
+                    <label>Title
+                    <input type="text" id="title" name="title" value="<%= title %>"></label> <br/> <br/>
+                  </div>
+
+                <div class="wrapper">
+                    
+                  <label>Hero Image
+                   
+                  <input type="text" id="textBox" name="textBox" value="<%= textBox %>">
+                  <input type="file" id="heroImage" name="heroImage"></label>
+                <br/> <br/>
+                </div>
+                
+                <div class="wrapper">
+                  <label>Description </label>
+                  <input type="textarea" id="description" name="description" value="<%= description %>"></input>
+                
+                <% if (er.some(error => error.path === 'title' || er.path === 'textBox' || er.path === 'heroImage' || er.path === 'description')) { %>
+                    <p class="error">
+                      Please enter all the details and upload an image
+                    </p>
+                    <% } else if (er.some(error => error.path === 'title' && er.path === 'textBox'  && er.path === 'heroImage' && er.path === 'description')) { %>
+                        <p class="error">
+                            Please enter all the details and upload an image
+                        </p>
+                        <% }  else if (er.some(error => error.path === 'title')) { %>
+                        <p class="error">
+                          <%= er.find(error => error.path === 'title').msg %>
+                        </p>
+                        <% }  else if (er.some(error => error.path === 'heroImage')) { %>
+                            <p class="error">
+                              <%= er.find(error => error.path === 'heroImage').msg %>
+                            </p>
+                            <% }  else if (er.some(error => error.path === 'description')) { %>
+                                <p class="error">
+                                  <%= er.find(error => error.path === 'description').msg %>
+                                </p>
+                                <% } %>
+                </div>
+                <div class="submission">
+                    <input type="hidden" name="fromEditPage" value="false">
+                    <button type="submit">Submit</button>  
+                </div>
+              </form>
+        </main>
+       
+        <%- include('layouts/footer'); -%>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tinymce@5.9.2/tinymce.min.js"></script>
+        <script>
+            console.log('Initializing TinyMCE...');
+            tinymce.init({
+            selector: '#description',
+            height: 200,
+          });
+        </script>
+      </body>
+    
+      

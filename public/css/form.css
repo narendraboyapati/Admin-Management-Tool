@@ -1,0 +1,151 @@
+body {
+    width: 1000px;
+    /* increase the width of the body to make space for the sidebar on the right */
+    border: 2px solid black;
+    /* add a 2px border in black around the content */
+    margin: 20px auto;
+    /* 20px margin from top and bottom of the browser body and auto makes the content sit equidistant from the left and right of the browser body */
+    padding: 20px;
+    /* make the content inside the body sit at a 20px gap from all the 4 sides */
+    border-radius: 10px;
+    /* round the edges of the border */
+    font-family: sans-serif;
+    /* change the default font to sans serif */
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background-color:azure;  
+    text-align: center;
+}
+ header h4{
+    margin-left: 850px;
+    text-align: end;
+}
+
+nav {
+    background-color: #f7e7d9;
+    /* add colour to the nav background */
+    padding: 20px 0;
+    /* add a 20 px top and bottom padding in the nav tag  */
+    text-align: center;
+    /* make the text in the nav centered */
+}
+
+nav a {
+    font-size: 20px;
+    /* make the text bigger than default */
+    font-weight: bold;
+    /* make the text bold */
+    color: #9f0015;
+    /* change the colour of the text links */
+    text-decoration: none;
+    /* remove the underline */
+    padding: 0 30px;
+    /* push the links away from the other links */
+}
+
+.loginform{
+    text-align: center;
+}
+
+fieldset {
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin: auto;
+
+}
+
+footer {
+    background-color: #f7e7d9;
+    /* add colour to the nav background */
+    padding: 10px 0;
+    /* add a 20 px top and bottom padding in the nav tag  */
+    text-align: center;
+    font-size: 15px;
+}
+
+button {
+    background-color: #800d29;
+    /* add a background colour */
+    color: white;
+    /* change the text colour */
+    display: inline-block;
+    /* so that we can assign a width */
+    width: 120px;
+    /* set the width of the link */
+    font-size: 20px;
+    /* change the font size */
+    border: 2px solid white;
+    /* add a border */
+    text-decoration: none;
+    /* remove the underline */
+    padding: 10px;
+    /* add a top, right, bottom and left padding */
+    margin-left: 20px;
+}
+.error {
+    /* border: 1px solid rgb(34, 3, 3); */
+    color: red;
+    margin-left: 1%;
+    margin-right: 10%;
+}
+.welcomeMessage, .confirmationMessage{
+    text-align: center;
+}
+.wrapper #description{
+    width:50%;
+    height:250px;
+}
+.wrapper #textBox,#title,#description{
+    width:50%;
+    
+}
+.submission button{
+    margin-left: 10px;
+    display: inline-block;
+    height:50px;
+    width:170px;
+}
+
+.edittable th,tr,td{
+    border:1px solid black;
+    text-align: center;
+}
+.edittable th{
+   background-color: lightgray;
+}
+
+table{
+    margin-left: 270px;
+    width:400px;
+    border-collapse: collapse;
+}
+.edittable td{
+    width: 200px;
+}
+/* .wrap{
+    display: grid;
+    grid-template-columns: 1;
+} */
+
+.addConfirmation, .deleteConfirmation, .editConfirmation, .logoutConfirmation{
+    text-align: center;
+}
+ .item{
+  margin-left: 30px;
+}
+.item1{
+    margin-left: 10px;
+}
+a{
+   text-decoration: none;
+}
+.aboutpage{
+    text-align: center;
+}
+.pagedetailscontent{
+    text-align: center;
+}
