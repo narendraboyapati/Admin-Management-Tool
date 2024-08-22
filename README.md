@@ -1,4 +1,4 @@
-Admin Management Tool 
+Academic Mini Project : Admin Management Tool 
 
 - This is a Web Application built on HTML, CSS, Javascript- Node.js, Node.Js- Express, Mongoose.
 
